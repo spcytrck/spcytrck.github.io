@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spcytrck - Productor musical y beatmaker profesional. Servicios de producción, mezcla y mastering para artistas.">
+    <meta name="keywords" content="productor musical, beatmaker, mixing, mastering, producción musical, beats, música, spcytrck">
+    <meta name="author" content="Spcytrck">
+    <title>Spcytrck - Productor Musical & Beatmaker</title>
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Spcytrck - Productor Musical & Beatmaker">
+    <meta property="og:description" content="Productor musical especializado en creación de beats, mixing y mastering. Trabajemos juntos en tu próximo proyecto.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tuusuario.github.io">
+    
+    <style>
+        /* Estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Efectos de partículas en el fondo */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: #8b0000;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-20px) translateX(10px);
+            }
+            50% {
+                transform: translateY(-40px) translateX(0);
+            }
+            75% {
+                transform: translateY(-20px) translateX(-10px);
+            }
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Encabezado */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .profile-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #8b0000;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-placeholder {
+            font-size: 3.5rem;
+            color: #8b0000;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(139, 0, 0, 0.7);
+            position: relative;
+            display: inline-block;
+        }
+
+        .name::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8b0000, transparent);
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-weight: 300;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Enlaces */
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            background: rgba(30, 30, 30, 0.7);
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .link:hover {
+            background: rgba(40, 40, 40, 0.8);
+            border-color: #8b0000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+        }
+
+        .link:hover::before {
+            left: 100%;
+        }
+
+        .link-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333;
+            width: 100%;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .email {
+            color: #8b0000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .email:hover {
+            color: #ff0000;
+        }
+
+        /* Efectos de sonido visuales */
+        .visualizer {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+            gap: 3px;
+        }
+
+        .bar {
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to top, #8b0000, #ff0000);
+            border-radius: 2px;
+            animation: equalizer 1.5s infinite ease-in-out;
+            animation-delay: calc(var(--i) * 0.1s);
+        }
+
+        @keyframes equalizer {
+            0%, 100% {
+                height: 20px;
+            }
+            50% {
+                height: 40px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .profile-container {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .bio {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo con partículas -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="profile-container">
+                <!-- 
+                INSTRUCCIONES PARA LA FOTO:
+                1. Sube tu foto a la carpeta 'images' en tu repositorio
+                2. Reemplaza la línea siguiente con: 
+                   <img src="images/tu-foto.jpg" alt="Spcytrck" class="profile-pic">
+                3. Asegúrate de que el nombre del archivo coincida
+                -->
+                <div class="profile-placeholder">👤</div>
+            </div>
+            <h1 class="name">Spcytrck</h1>
+            <p class="bio">Productor musical y beatmaker especializado en creación de beats, mixing y mastering. Trabajemos juntos en tu próximo proyecto.</p>
+        </header>
+
+        <!-- Visualizador de audio -->
+        <div class="visualizer">
+            <div class="bar" style="--i:0"></div>
+            <div class="bar" style="--i:1"></div>
+            <div class="bar" style="--i:2"></div>
+            <div class="bar" style="--i:3"></div>
+            <div class="bar" style="--i:4"></div>
+            <div class="bar" style="--i:5"></div>
+            <div class="bar" style="--i:6"></div>
+            <div class="bar" style="--i:7"></div>
+            <div class="bar" style="--i:8"></div>
+            <div class="bar" style="--i:9"></div>
+        </div>
+
+        <div class="links">
+            <a href="https://www.instagram.com/spcytrck_" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">📷</span> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@spcytrck_" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">🎵</span> TikTok
+            </a>
+            <a href="https://x.com/spcytrck_" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">🐦</span> X (Twitter)
+            </a>
+            
+            <!-- 
+            =============================================
+            ZONA PARA AGREGAR MÁS ENLACES - COPIAR Y PEGAR
+            =============================================
+            
+            <a href="URL_DEL_ENLACE" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">EMOJI</span> TEXTO_DEL_ENLACE
+            </a>
+
+            Ejemplos de enlaces útiles para productor musical:
+            
+            <a href="https://youtube.com/tucanal" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">▶️</span> YouTube
+            </a>
+            
+            <a href="https://open.spotify.com/artist/tuID" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">🎧</span> Spotify
+            </a>
+            
+            <a href="https://beatstars.com/tutienda" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">⭐</span> Beatstars
+            </a>
+            
+            <a href="https://soundcloud.com/tuperfil" class="link" target="_blank" rel="noopener noreferrer">
+                <span class="link-icon">☁️</span> SoundCloud
+            </a>
+            -->
+        </div>
+
+        <footer class="footer">
+            <p>Contacto: <a href="mailto:spcytrck@gmail.com" class="email">spcytrck@gmail.com</a></p>
+            <p>&copy; 2023 Spcytrck. Productor Musical & Beatmaker.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Crear partículas dinámicas
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 20;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posición aleatoria
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Animación con duración aleatoria
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Retraso aleatorio
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Efecto de sonido visual dinámico
+            const bars = document.querySelectorAll('.bar');
+            setInterval(() => {
+                bars.forEach(bar => {
+                    const randomHeight = Math.floor(Math.random() * 30) + 10;
+                    bar.style.height = `${randomHeight}px`;
+                });
+            }, 200);
+        });
+    </script>
+</body>
+</html>
