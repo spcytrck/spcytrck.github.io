@@ -129,6 +129,40 @@
       image-rendering: pixelated;
     }
 
+    /* DESCRIPCIÓN */
+.description {
+  font-size: 9px;
+  line-height: 1.6;
+  padding: 10px 14px;
+  border: 3px solid var(--border);
+  margin: 0 auto;
+  position: relative;
+  animation: gamerPulse 2.5s ease-in-out infinite;
+}
+
+/* Cursor tipo consola */
+.description::after {
+  content: "_";
+  margin-left: 4px;
+  animation: cursorBlink 1s steps(1) infinite;
+}
+
+/* Glow + pulso */
+@keyframes gamerPulse {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(56,189,248,0.4);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(56,189,248,0.9);
+  }
+}
+
+/* Cursor parpadeante */
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
     /* REDES */
     .socials {
       display: flex;
@@ -143,7 +177,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--card);
       animation: pulse 2s infinite;
       transition: transform 0.15s steps(2);
     }
@@ -330,6 +363,11 @@
 
     <div class="logo">
       <img src="spcytrck.png" alt="Logo" />
+    </div>
+
+    <div class="description">
+      DJ/Productor <br>
+      ¡Hago música y pico botones!
     </div>
 
     <div class="socials">
